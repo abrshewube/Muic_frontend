@@ -1,12 +1,26 @@
 import React from 'react';
+import emailjs from '@emailjs/browser';
 import { Form, Input, Button, Row, Col, Typography, Divider } from 'antd';
 
 const { Title } = Typography;
 
 const ContactSection = () => {
   const onFinish = (values) => {
-    console.log('Form submitted:', values);
-    // Handle form submission here (e.g., send the data to a backend server)
+    // Your emailjs configuration (replace with your actual values)
+    const emailServiceID = 'service_9k7705n';
+    const emailTemplateID = 'template_i8i8s3j';
+    const userID = 'FfgcCll_2f5M4YY3e';
+
+    // Send the email using emailjs
+    emailjs.send(emailServiceID, emailTemplateID, values, userID)
+      .then((response) => {
+        alert('Successfully sent , we will contact you soon')
+        // Handle any further actions after successful email submission
+      })
+      .catch((error) => {
+        console.error('Error sending email:', error);
+        // Handle error cases if needed
+      });
   };
 
   return (

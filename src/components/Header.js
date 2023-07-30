@@ -11,7 +11,7 @@ const AppHeader = () => {
   return (
     <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
       <div className="logo" style={{ float: 'left', color: '#fff', fontSize: '24px', marginRight: '24px' }}>
-        Your Logo
+       Sucess Consultancy
       </div>
       <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['home']} style={{ lineHeight: '64px' }}>
         <Menu.Item key="home">
@@ -20,9 +20,7 @@ const AppHeader = () => {
         <Menu.Item key="services">
           <Link to="/services">Services</Link> {/* Link to your services page */}
         </Menu.Item>
-        <Menu.Item key="scholarships">
-          <Link to="/scholarships">Scholarships</Link> {/* Link to your scholarships page */}
-        </Menu.Item>
+        
         {/* Add more menu items as needed */}
 
         <Menu.Item key="faq">
@@ -40,16 +38,13 @@ const AppHeader = () => {
         <Menu.Item key="about">
           <Link to="/about">About</Link> {/* Link to your scholarships page */}
         </Menu.Item>
-        <Menu.Item key="asistance">
-          <Link to="/asistance">Asistance</Link> {/* Link to your scholarships page */}
-        </Menu.Item>
+        
 
-        <Menu.Item key="sucess">
-          <Link to="/sucess">Sucess Stories</Link> {/* Link to your scholarships page */}
-        </Menu.Item>
+       
       </Menu>
     </Header>
   );
 };
 
 export default AppHeader;
+

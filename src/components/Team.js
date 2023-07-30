@@ -1,27 +1,29 @@
 import React from 'react';
 import { Avatar, Card, Typography, Row, Col } from 'antd';
-
+import Img1 from './adoni.jpg'
+import Img2 from './cons1.jpg'
+import Img3 from './const2.jpg'
 const { Title, Text } = Typography;
 
 const TeamSection = () => {
   // Sample team members data
   const teamMembersData = [
     {
-      name: 'John Doe',
-      photo: 'https://placeimg.com/100/100/people',
-      jobTitle: 'CEO',
+      name: 'Adoniyas Tesfaye',
+      photo: Img1,
+      jobTitle: 'Education Consultants',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in justo at nisi congue commodo vitae sit amet neque.',
     },
     {
-      name: 'Jane Smith',
-      photo: 'https://placeimg.com/100/100/people',
+      name: '',
+      photo: Img2,
       jobTitle: 'Marketing Manager',
       description: 'Quisque eu velit eu purus placerat luctus. Sed nec felis eget odio malesuada ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.',
     },
 
     {
       name: 'Abrham Wube',
-      photo: 'https://placeimg.com/100/100/people',
+      photo: Img3,
       jobTitle: 'Marketing Manager',
       description: 'Quisque eu velit eu purus placerat luctus. Sed nec felis eget odio malesuada ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.',
     },
@@ -33,7 +35,7 @@ const TeamSection = () => {
     },
     {
       name: 'Abrham Wube',
-      photo: 'https://placeimg.com/100/100/people',
+      photo: 'https://media.licdn.com/dms/image/D4E03AQG-OsBVu4O75A/profile-displayphoto-shrink_800_800/0/1685397292393?e=1696464000&v=beta&t=RkksS07j2Yh8tyAy-hgyXYPRWR8NUhx-bRTWQvbcE04',
       jobTitle: 'Marketing Manager',
       description: 'Quisque eu velit eu purus placerat luctus. Sed nec felis eget odio malesuada ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.',
     },

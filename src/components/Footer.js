@@ -22,7 +22,7 @@ const AppFooter = () => {
                 <br />
                 <Link to="/services">Services</Link>
                 <br />
-                <Link to="/scholarships">Scholarships</Link>
+                <Link to="/contact">Contact</Link>
                 {/* Add more important pages links as needed */}
               </div>
             </Col>
@@ -37,9 +37,10 @@ const AppFooter = () => {
               </div>
             </Col>
             <Col md={8} xs={24}>
-              <div>
+              <div >
                 <Text strong>Follow Us</Text>
                 <br />
+                <div style={{margin:'20px'}}>
                 <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener noreferrer">
                   <FacebookOutlined style={{ fontSize: '24px', color: '#1877F2' }} />
                 </a>
@@ -49,12 +50,13 @@ const AppFooter = () => {
                 <a href="https://www.instagram.com/yourpage" target="_blank" rel="noopener noreferrer">
                   <InstagramOutlined style={{ fontSize: '24px', color: '#C13584' }} />
                 </a>
+                </div>
               </div>
             </Col>
           </Row>
           <Divider />
           <div>
-            <Text>© 2023 Your Scholarship Consultancy</Text>
+            <Text>© 2023 Success Consultancy</Text>
           </div>
         </Col>
       </Row>

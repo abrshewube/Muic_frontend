@@ -10,8 +10,8 @@ const { Content } = Layout;
 const Home = () => {
   return (
     <Content style={{ padding: '20px', minHeight: 'calc(100vh - 64px)',marginTop:'100px' }}>
-    <Hero/>
-    <Testimonials/>
+   <Hero/>
+    
     </Content>
   );
 };

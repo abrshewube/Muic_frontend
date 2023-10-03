@@ -1,50 +1,60 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import styled from '@emotion/styled';
+import { space, typography, color } from 'styled-system';
 
+// Create a styled header container
+const HeaderContainer = styled.header`
+  background-color: #333; /* Background color */
+  color: white; /* Text color */
+  padding: 20px 0; /* Padding at the top and bottom */
+  text-align: center; /* Center-align text */
+`;
 
+// Create a styled navigation list
+const NavList = styled.ul`
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+`;
 
-import React from 'react';
-import { Layout, Menu } from 'antd';
-import { Link } from 'react-router-dom'; // If using React Router for navigation
+// Create a styled navigation item
+const NavItem = styled.li`
+  margin: 0 20px;
+`;
 
-const { Header } = Layout;
+// Create a styled navigation link
+const NavLinkStyled = styled(Link)`
+  text-decoration: none;
+  color: white; /* Link text color */
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s ease;
 
-const AppHeader = () => {
+  &:hover {
+    color: #00aaff; /* Change link color on hover */
+  }
+`;
+
+const Header = () => {
   return (
-    <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
-      <div className="logo" style={{ float: 'left', color: '#fff', fontSize: '24px', marginRight: '24px' }}>
-       Sucess Consultancy
-      </div>
-      <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['home']} style={{ lineHeight: '64px' }}>
-        <Menu.Item key="home">
-          <Link to="/">Home</Link> {/* If using React Router, link to your homepage */}
-        </Menu.Item>
-        <Menu.Item key="services">
-          <Link to="/services">Services</Link> {/* Link to your services page */}
-        </Menu.Item>
+    <HeaderContainer>
+      <h1>Simple Music App</h1>
+      <NavList>
+        <NavItem>
+          <NavLinkStyled to="/">Home</NavLinkStyled>
+        </NavItem>
+        <NavItem>
+          <NavLinkStyled to="/create">Create Songs</NavLinkStyled>
+        </NavItem>
+        <NavItem>
+          <NavLinkStyled to="/about">About</NavLinkStyled>
+        </NavItem>
         
-        {/* Add more menu items as needed */}
-
-        <Menu.Item key="faq">
-          <Link to="/faq">FAQ</Link> {/* Link to your scholarships page */}
-        </Menu.Item>
-        <Menu.Item key="team">
-          <Link to="/team">Team</Link> {/* Link to your scholarships page */}
-        </Menu.Item>
-        <Menu.Item key="blog">
-          <Link to="/blog">Blog</Link> {/* Link to your scholarships page */}
-        </Menu.Item>
-        <Menu.Item key="contact">
-          <Link to="/contact">Contact</Link> {/* Link to your scholarships page */}
-        </Menu.Item>
-        <Menu.Item key="about">
-          <Link to="/about">About</Link> {/* Link to your scholarships page */}
-        </Menu.Item>
-        
-
-       
-      </Menu>
-    </Header>
+      </NavList>
+    </HeaderContainer>
   );
 };
 
-export default AppHeader;
-
+export default Header;

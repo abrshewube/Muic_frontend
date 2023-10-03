@@ -1,68 +1,42 @@
-import React from 'react';
-import { Layout, Row, Col, Typography, Divider } from 'antd';
-import { Link } from 'react-router-dom';
-import { FacebookOutlined, TwitterOutlined, InstagramOutlined } from '@ant-design/icons';
+import React from "react";
+import styled from "@emotion/styled";
+import { space, typography, color } from "styled-system";
 
-const { Footer } = Layout;
-const { Text } = Typography;
+// Create a styled footer container
+const FooterContainer = styled.footer`
+  background-color: #333; /* Background color */
+  color: white; /* Text color */
+  padding: 20px 0; /* Padding at the top and bottom */
+  text-align: center; /* Center-align text */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
-const AppFooter = () => {
+// Create a styled footer text
+const FooterText = styled.p`
+  margin: 0;
+  ${typography}
+`;
+
+// Create a styled link for the GitHub icon
+const GitHubLink = styled.a`
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  margin-top: 10px;
+`;
+
+const Footer = () => {
   return (
-    <div className='bot'>
-    <Footer style={{ textAlign: 'center' }}>
-      <Row justify="center">
-        <Col span={20}>
-          <Divider />
-          <Row gutter={16}>
-            <Col md={8} xs={24}>
-              <div>
-                <Text strong>Important Pages</Text>
-                <br />
-                <Link to="/">Home</Link>
-                <br />
-                <Link to="/services">Services</Link>
-                <br />
-                <Link to="/contact">Contact</Link>
-                {/* Add more important pages links as needed */}
-              </div>
-            </Col>
-            <Col md={8} xs={24}>
-              <div>
-                <Text strong>Legal Information</Text>
-                <br />
-                <Link to="/privacy-policy">Privacy Policy</Link>
-                <br />
-                <Link to="/terms-of-service">Terms of Service</Link>
-                {/* Add more legal information links as needed */}
-              </div>
-            </Col>
-            <Col md={8} xs={24}>
-              <div >
-                <Text strong>Follow Us</Text>
-                <br />
-                <div style={{margin:'20px'}}>
-                <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener noreferrer">
-                  <FacebookOutlined style={{ fontSize: '24px', color: '#1877F2' }} />
-                </a>
-                <a href="https://www.twitter.com/yourpage" target="_blank" rel="noopener noreferrer">
-                  <TwitterOutlined style={{ fontSize: '24px', color: '#1DA1F2' }} />
-                </a>
-                <a href="https://www.instagram.com/yourpage" target="_blank" rel="noopener noreferrer">
-                  <InstagramOutlined style={{ fontSize: '24px', color: '#C13584' }} />
-                </a>
-                </div>
-              </div>
-            </Col>
-          </Row>
-          <Divider />
-          <div>
-            <Text>© 2023 Success Consultancy</Text>
-          </div>
-        </Col>
-      </Row>
-    </Footer>
-    </div>
+    <FooterContainer>
+      <FooterText fontSize={16}>
+        &copy; {new Date().getFullYear()} My Beautiful Website
+      </FooterText>
+      
+      <FooterText fontSize={12}>Made by Dawit Minale</FooterText>
+    </FooterContainer>
   );
 };
 
-export default AppFooter;
+export default Footer;

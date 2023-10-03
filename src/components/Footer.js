@@ -31,7 +31,7 @@ const Footer = () => {
   return (
     <FooterContainer>
       <FooterText fontSize={16}>
-        &copy; {new Date().getFullYear()} My Beautiful Website
+        &copy; {new Date().getFullYear()} Simple Music App
       </FooterText>
       
       <FooterText fontSize={12}>Made by Dawit Minale</FooterText>

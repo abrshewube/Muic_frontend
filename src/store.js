@@ -1,75 +1,4 @@
-// // src/store.js
 
-// import { configureStore, createSlice } from '@reduxjs/toolkit';
-// import createSagaMiddleware from 'redux-saga';
-// import { all, call, put, takeEvery } from 'redux-saga/effects';
-
-// // Create a Saga middleware
-// const sagaMiddleware = createSagaMiddleware();
-
-// // Initial state for songs
-// const initialState = {
-//   songs: [],
-//   loading: false,
-//   error: null,
-// };
-
-// // Create a slice for managing songs
-// const songsSlice = createSlice({
-//   name: 'songs',
-//   initialState,
-//   reducers: {
-//     getSongsStart: (state) => {
-//       state.loading = true;
-//     },
-//     getSongsSuccess: (state, action) => {
-//       state.loading = false;
-//       state.songs = action.payload;
-//       state.error = null;
-//     },
-//     getSongsFailure: (state, action) => {
-//       state.loading = false;
-//       state.error = action.payload;
-//     },
-//     // Add other actions for creating, updating, and deleting songs
-//   },
-// });
-
-// // Export actions
-// export const { getSongsStart, getSongsSuccess, getSongsFailure } = songsSlice.actions;
-
-// // Create a Saga function to fetch songs
-// function* fetchSongs() {
-//   try {
-//     const response = yield call(fetch, 'http://localhost:5050/songs'); // Replace with your API endpoint
-//     const data = yield response.json();
-//     yield put(getSongsSuccess(data));
-//   } catch (error) {
-//     yield put(getSongsFailure(error.message));
-//   }
-// }
-
-// // Create a Saga watcher function
-// function* watchGetSongs() {
-//   yield takeEvery(getSongsStart.type, fetchSongs);
-// }
-
-// // Create the Redux store
-// const store = configureStore({
-//   reducer: {
-//     songs: songsSlice.reducer,
-//   },
-//   middleware: [sagaMiddleware],
-// });
-
-// // Run the Saga middleware
-// sagaMiddleware.run(function* () {
-//   yield all([watchGetSongs()]);
-// });
-
-// export default store;
-
-// src/store.js
 
 import { configureStore, createSlice } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
@@ -163,7 +92,7 @@ export const {
 // Create a Saga function to fetch songs
 function* fetchSongs() {
   try {
-    const response = yield call(fetch, 'http://localhost:5050/songs'); // Replace with your API endpoint
+    const response = yield call(fetch, 'https://last-music.onrender.com/songs'); 
     const data = yield response.json();
     yield put(getSongsSuccess(data));
   } catch (error) {
@@ -174,7 +103,7 @@ function* fetchSongs() {
 // Create a Saga function to create a song
 function* createSong(action) {
   try {
-    const response = yield call(fetch, 'http://localhost:5050/songs', {
+    const response = yield call(fetch, 'https://last-music.onrender.com/songs', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -191,7 +120,7 @@ function* createSong(action) {
 // Create a Saga function to update a song
 function* updateSong(action) {
   try {
-    const response = yield call(fetch, `http://localhost:5050/songs/${action.payload.id}`, {
+    const response = yield call(fetch, `https://last-music.onrender.com/songs/${action.payload.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -208,7 +137,7 @@ function* updateSong(action) {
 // Create a Saga function to delete a song
 function* deleteSong(action) {
   try {
-    yield call(fetch, `http://localhost:5050/songs/${action.payload}`, {
+    yield call(fetch, `https://last-music.onrender.com/songs/${action.payload}`, {
       method: 'DELETE',
     });
     yield put(deleteSongSuccess(action.payload));
